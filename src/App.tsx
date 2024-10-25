@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import useGet from "./hooks/useGet";
+import Login from "./components/login";
+import Register from "./components/register";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import OrderManagement from "./management";
 
 function App() {
+  const { data, isLoading } = useGet("/users");
+  if (isLoading) {
+    return <p>Loading..,</p>;
+  }
+  console.log(data);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/orders" element={<OrderManagement />} />
+      </Routes>
+    </>
   );
 }
 
