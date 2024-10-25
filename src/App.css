@@ -14,3 +14,30 @@ body {
 /* .container {
   max-width: 0px;
 } */
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.4;
+  transition: 0.4s;
+}
+
+a.active {
+  opacity: 1;
+}
+
+ul {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+  gap: 45px;
+}
+
+nav {
+  /* max-width: 550px; */
+  margin-bottom: 70px;
+}

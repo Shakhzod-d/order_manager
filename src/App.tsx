@@ -4,16 +4,12 @@ import Register from "./components/register";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import OrderManagement from "./management";
+import { Navbar } from "./components";
 
 function App() {
-  const { data, isLoading } = useGet("/users");
-  if (isLoading) {
-    return <p>Loading..,</p>;
-  }
-  console.log(data);
-
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
