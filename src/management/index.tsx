@@ -35,13 +35,21 @@ const OrderManagement: React.FC = () => {
   ) => {
     let filtered = data || [];
 
-    if (status) filtered = filtered.filter((order) => order.status === status);
+    if (status)
+      filtered = filtered.filter(
+        (order: { status: string }) => order.status === status
+      );
     if (startDate)
-      filtered = filtered.filter((order) => order.date >= startDate);
-    if (endDate) filtered = filtered.filter((order) => order.date <= endDate);
+      filtered = filtered.filter(
+        (order: { date: string }) => order.date >= startDate
+      );
+    if (endDate)
+      filtered = filtered.filter(
+        (order: { date: string }) => order.date <= endDate
+      );
     if (search)
       filtered = filtered.filter(
-        (order) =>
+        (order: { customerName: string; id: string }) =>
           order.customerName.toLowerCase().includes(search.toLowerCase()) ||
           order.id.toString().includes(search)
       );
