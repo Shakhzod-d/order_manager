@@ -36,36 +36,36 @@ const OrdersFilter: React.FC<OrdersFilterProps> = ({ onFilter }) => {
         variant="outlined"
       >
         <MenuItem value="">All</MenuItem>
-        <MenuItem value="Pending">O‘tkazilmagan</MenuItem>
-        <MenuItem value="Shipped">Jo‘natildi</MenuItem>
-        <MenuItem value="Delivered">Yetkazildi</MenuItem>
+        <MenuItem value="Pending">Pending</MenuItem>
+        <MenuItem value="Shipped">Shipped</MenuItem>
+        <MenuItem value="Delivered">Delivered</MenuItem>
       </TextField>
 
       <TextField
         type="date"
-        label="Boshlanish sanasi"
+        label="from"
         value={startDate}
         onChange={(e) => setStartDate(e.target.value)}
         InputLabelProps={{ shrink: true }}
       />
       <TextField
         type="date"
-        label="Tugash sanasi"
+        label="to"
         value={endDate}
         onChange={(e) => setEndDate(e.target.value)}
         InputLabelProps={{ shrink: true }}
       />
 
       <TextField
-        label="Qidirish"
+        label="Search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
       <Button variant="contained" onClick={handleFilter}>
-        Filtrlash
+        Filter
       </Button>
-      <Button onClick={handleReset}>Tiklash</Button>
+      <Button onClick={handleReset}>Reset</Button>
     </Stack>
   );
 };

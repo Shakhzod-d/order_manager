@@ -46,10 +46,10 @@ const OrdersTable: React.FC<OrdersTableProps> = ({ orders }) => {
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Sana</TableCell>
-            <TableCell>Mijoz</TableCell>
+            <TableCell>Date</TableCell>
+            <TableCell>Client</TableCell>
             <TableCell>Status</TableCell>
-            <TableCell>Summasi</TableCell>
+            <TableCell>Amount</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
